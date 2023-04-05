@@ -11,6 +11,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Your ML workflow goes here
+          sudo -H pip install virtualenv
           pip install -r requirements.txt
           python model.py
           

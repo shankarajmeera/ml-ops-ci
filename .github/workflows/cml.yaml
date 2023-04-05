@@ -15,5 +15,3 @@ jobs:
           python model.py
           
 
-          
-          cml-send-comment report.md

@@ -6,6 +6,8 @@ jobs:
     container: docker://dvcorg/cml-py3:latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4
+      - uses: iterative/setup-cml@v1
       - name: 'Train my model'
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -20,7 +22,7 @@ jobs:
           echo "\n## Model Performance" >> report.md
           echo "Model performance metrics are on the plot below." >> report.md
           
-          cml-publish model_results.png --md >> report.md
+          #cml-publish model_results.png --md >> report.md
 
           
 

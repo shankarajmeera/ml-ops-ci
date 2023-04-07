@@ -19,8 +19,8 @@ jobs:
           python extraction_reference_implementation_mnist.py
           
           echo "## extraction implementationModel Metrics" > report.md
-          cat Attack_samples >> report.md
-          cat Defense_artifact >> report.md
+          #cat Attack_samples >> report.md
+          #cat Defense_artifact >> report.md
           
           echo "\n## Model Performance" >> report.md
           echo "Model performance metrics are on the plot below." >> report.md

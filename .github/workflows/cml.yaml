@@ -13,20 +13,18 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           #  Your ML workflow goes here
-          pip install -r requirement.txt
-          # python model.py
-          python extraction_reference_implementation_mnist.py
+          pip install -r requirements.txt
+          python model.py
           
           echo "## Model Metrics" > report.md
-          # cat metrics.txt >> report.md
-          cat attack_samples_20230327_1113.zip >> report.zip
+          cat metrics.txt >> report.md
           
           echo "\n## Model Performance" >> report.md
           echo "Model performance metrics are on the plot below." >> report.md
           
-          #cml-publish model_results.png --md >> report.md
+          cml-publish model_results.png --md >> report.md
           
-           ##cml-send-comment report.md
+           #cml-send-comment report.md
 
 
 

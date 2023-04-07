@@ -6,3 +6,5 @@ scikit-learn
 requests
 zipp
 opencv-python
+pydot
+graphviz

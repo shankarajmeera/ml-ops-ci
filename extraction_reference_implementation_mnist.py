@@ -234,7 +234,7 @@ model.summary()
 """
 Description: Model architecture plot
 """
-tf.keras.utils.plot_model(model,show_shapes=True,show_layer_names=True)
+# tf.keras.utils.plot_model(model,show_shapes=True,show_layer_names=True)
 
 """
 Description : Callbacks

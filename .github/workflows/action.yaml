@@ -1,4 +1,4 @@
-name: mlops-exaple-tensorflow-regression
+name: mlops-aishield
 on: [push]
 jobs:
   run:

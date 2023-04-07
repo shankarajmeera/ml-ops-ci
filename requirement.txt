@@ -7,4 +7,5 @@ requests
 zipp
 opencv-python
 pydot
+pydotplus
 graphviz

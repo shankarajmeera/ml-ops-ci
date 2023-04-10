@@ -12,7 +12,7 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # #  Your ML workflow goes here
+          # Your ML workflow goes here
           pip install -r requirement.txt
           python extraction_reference_implementation_mnist.py
           

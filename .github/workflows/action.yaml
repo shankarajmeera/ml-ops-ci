@@ -14,21 +14,19 @@ jobs:
       - uses: actions/setup-python@v4
       - uses: iterative/setup-cml@v1
       - uses: yaananth/run-notebook@v2
-      - name: 'Train my model'
         env:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ## Your ML workflow goes here
-          pip install -r requirement.txt
-          #python extraction_reference_implementation_mnist.py
-          python Extraction_Reference_Implementation_MNIST.ipynb
-          
-          echo "## extraction implementationModel Metrics" > report.md
-          cat /home/runner/work/ml-ops-ci/ml-ops-ci/reports/Attack_samples.zip >> Attack_samples.zip
-          cat /home/runner/work/ml-ops-ci/ml-ops-ci/reports/Defense_artifact.zip >> Defense_artifact.zip
-          
-          echo "\n## Model Performance" >> report.md
-          echo "Model performance metrics are on the plot below." >> report.md
-          #cml-publish model_results.png --md >> report.md
-          
-          #cml-send-comment report.md
+        RUNNER: ${{ toJson(runner) }}
+        SECRETS: ${{ toJson(secrets) }}
+        GITHUB: ${{ toJson(github) }}
+        with:
+        notebook: "PATHTONOTEBOOK.ipynb"
+        params: "PATHTOPARAMS.json"
+        isReport: False
+        poll: True
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+        name: output
+        path: ${{ RUNNER.temp }}/nb-runner
+      env:
+        RUNNER: ${{ toJson(runner) }}

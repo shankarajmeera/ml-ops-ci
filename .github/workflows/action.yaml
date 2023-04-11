@@ -1,9 +1,5 @@
 name: mlops-aishield
-on:
-  push:
-    branches: master
-  pull_request:
-    branches: master
+on: [push]
     
 jobs:
   run:
